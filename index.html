@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eisen Jiang</title>
+  <meta name="description" content="Personal website of Eisen Jiang — researcher and builder.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark");</script>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ═══ Sidebar ═══ -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="site-mark">
+        <span class="site-name">Eisen Jiang</span>
+        <span class="site-sub">Personal Website</span>
+      </a>
+      <div class="sidebar-header-actions">
+        <button class="sidebar-collapse-btn" id="sidebarCollapse">‹</button>
+        <button class="mob-toggle" id="mobToggle">Menu</button>
+      </div>
+    </div>
+    <div class="sidebar-body" id="sidebarBody">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="has-sub">
+          <a href="research.html">Research</a>
+          <ul class="sub-nav">
+            <li><a href="research.html#papers">Papers</a></li>
+            <li><a href="research.html#projects">Projects</a></li>
+          </ul>
+        </li>
+        <li><a href="writing.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="sidebar-foot">
+        <div class="socials">
+          <a href="https://github.com/eisenjiang37-gif" target="_blank" rel="noopener">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">Scholar</a>
+          <a href="#">CV</a>
+        </div>
+          <button class="theme-toggle">
+            <span class="t-icon"></span>
+            <span class="t-label">◑ Light mode</span>
+          </button>
+        <div class="copy">© 2026 Eisen Jiang</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ Main ═══ -->
+  <main class="content">
+
+    <section class="hero">
+      <div class="hero-eyebrow">Eisen Jiang — Zihan Jiang — 蒋子涵</div>
+      <h1 class="hero-name">
+        <span class="hero-first">Eisen</span>
+        <span class="hero-last">Jiang</span>
+      </h1>
+      <div class="hero-footer">
+        <p class="hero-tagline">Senior at Zhejiang University. Researching gesture recognition and reinforcement learning. Incoming graduate student, Fall 2026.</p>
+        <span class="badge">Incoming Grad — Fall 2026</span>
+      </div>
+    </section>
+
+    <div class="index-grid">
+      <a href="about.html" class="index-card">
+        <div class="card-no">01</div>
+        <div class="card-h">About</div>
+        <p class="card-p">Background, education, and what drives my work.</p>
+        <div class="card-go">Explore →</div>
+      </a>
+      <a href="research.html" class="index-card">
+        <div class="card-no">02</div>
+        <div class="card-h">Research</div>
+        <p class="card-p">Publications, ongoing projects, and research interests.</p>
+        <div class="card-go">Explore →</div>
+      </a>
+      <a href="writing.html" class="index-card">
+        <div class="card-no">03</div>
+        <div class="card-h">Blog</div>
+        <p class="card-p">Notes, essays, and reflections on problems I find interesting.</p>
+        <div class="card-go">Explore →</div>
+      </a>
+      <a href="contact.html" class="index-card">
+        <div class="card-no">04</div>
+        <div class="card-h">Contact</div>
+        <p class="card-p">Get in touch for collaborations, questions, or just to say hello.</p>
+        <div class="card-go">Explore →</div>
+      </a>
+    </div>
+
+  </main>
+</div>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Eisen Jiang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark");</script>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ═══ Sidebar ═══ -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="site-mark">
+        <span class="site-name">Eisen Jiang</span>
+        <span class="site-sub">Personal Website</span>
+      </a>
+      <div class="sidebar-header-actions">
+        <button class="sidebar-collapse-btn" id="sidebarCollapse">‹</button>
+        <button class="mob-toggle" id="mobToggle">Menu</button>
+      </div>
+    </div>
+    <div class="sidebar-body" id="sidebarBody">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="has-sub">
+          <a href="research.html">Research</a>
+          <ul class="sub-nav">
+            <li><a href="research.html#papers">Papers</a></li>
+            <li><a href="research.html#projects">Projects</a></li>
+          </ul>
+        </li>
+        <li><a href="writing.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="sidebar-foot">
+        <div class="socials">
+          <a href="https://github.com/eisenjiang37-gif" target="_blank" rel="noopener">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">Scholar</a>
+          <a href="#">CV</a>
+        </div>
+          <button class="theme-toggle">
+            <span class="t-icon"></span>
+            <span class="t-label">◑ Light mode</span>
+          </button>
+        <div class="copy">© 2026 Eisen Jiang</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ Main ═══ -->
+  <main class="content">
+
+    <header class="pg-header">
+      <div class="pg-label">02 — Research</div>
+      <h1 class="pg-title">Research</h1>
+      <p class="pg-sub">Publications, ongoing projects, and the questions I'm trying to answer.</p>
+    </header>
+
+    <div class="pg-body">
+
+      <!-- Tabs -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="papers">Papers</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+      </div>
+
+      <!-- ── Papers ── -->
+      <div class="tab-panel active" id="papers">
+
+        <div class="sec-label">Publications</div>
+        <p style="color:var(--text-dim);font-style:italic;margin-bottom:2.5rem;">No publications yet. Currently completing undergraduate thesis.</p>
+
+        <div class="sec-label">Thesis</div>
+        <div class="item-list">
+          <div class="item">
+            <div>
+              <div class="item-title">Gesture Recognition Using Doppler Radar Sensors</div>
+              <div class="item-authors">Eisen Jiang (Zihan Jiang)</div>
+              <div class="item-venue">Undergraduate Thesis — Zhejiang University, ISEE, 2026</div>
+              <div class="item-links">
+                <a href="#" class="item-link">PDF</a>
+                <a href="#" class="item-link">Code</a>
+              </div>
+            </div>
+            <div class="item-year">2026</div>
+          </div>
+        </div>
+
+      </div><!-- /papers -->
+
+      <!-- ── Projects ── -->
+      <div class="tab-panel" id="projects">
+
+        <div class="sec-label">Projects</div>
+        <div class="item-list">
+
+          <div class="item">
+            <div>
+              <div class="item-title">Doppler Radar Gesture Recognition System</div>
+              <div class="item-authors">End-to-end pipeline: raw radar signal → gesture classification</div>
+              <div class="item-venue">Undergraduate thesis project — ZJU ISEE · Python, PyTorch</div>
+              <div class="item-links">
+                <a href="#" class="item-link">GitHub</a>
+              </div>
+            </div>
+            <div class="item-year">2025 – 2026</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="item-title">Boxing Footage Action Analysis</div>
+              <div class="item-authors">Non-skeleton action recognition applied to personal boxing video</div>
+              <div class="item-venue">Personal project — applying internship research to self-recorded footage</div>
+              <div class="item-links">
+                <a href="#" class="item-link">GitHub</a>
+              </div>
+            </div>
+            <div class="item-year">2025 –</div>
+          </div>
+
+          <div class="item">
+            <div>
+              <div class="item-title">CartPole in C++</div>
+              <div class="item-authors">Reimplementing a canonical RL environment from scratch in C++</div>
+              <div class="item-venue">Personal project — C++ systems learning, RL fundamentals</div>
+              <div class="item-links">
+                <a href="#" class="item-link">GitHub</a>
+              </div>
+            </div>
+            <div class="item-year">2026 –</div>
+          </div>
+
+        </div>
+
+      </div><!-- /projects -->
+
+    </div>
+  </main>
+</div>
+<script src="assets/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Eisen Jiang</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")||"dark");</script>
+</head>
+<body>
+<div class="layout">
+
+  <!-- ═══ Sidebar ═══ -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <a href="index.html" class="site-mark">
+        <span class="site-name">Eisen Jiang</span>
+        <span class="site-sub">Personal Website</span>
+      </a>
+      <div class="sidebar-header-actions">
+        <button class="sidebar-collapse-btn" id="sidebarCollapse">‹</button>
+        <button class="mob-toggle" id="mobToggle">Menu</button>
+      </div>
+    </div>
+    <div class="sidebar-body" id="sidebarBody">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="has-sub">
+          <a href="research.html">Research</a>
+          <ul class="sub-nav">
+            <li><a href="research.html#papers">Papers</a></li>
+            <li><a href="research.html#projects">Projects</a></li>
+          </ul>
+        </li>
+        <li><a href="writing.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="sidebar-foot">
+        <div class="socials">
+          <a href="https://github.com/eisenjiang37-gif" target="_blank" rel="noopener">GitHub</a>
+          <a href="#">Twitter</a>
+          <a href="#">Scholar</a>
+          <a href="#">CV</a>
+        </div>
+          <button class="theme-toggle">
+            <span class="t-icon"></span>
+            <span class="t-label">◑ Light mode</span>
+          </button>
+        <div class="copy">© 2026 Eisen Jiang</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ Main ═══ -->
+  <main class="content">
+
+    <header class="pg-header">
+      <div class="pg-label">01 — About</div>
+      <h1 class="pg-title">Who I Am</h1>
+      <p class="pg-sub">Senior at Zhejiang University, incoming graduate student, and occasional boxer.</p>
+    </header>
+
+    <div class="pg-body">
+
+      <div class="sec-label">Biography</div>
+      <p>I am a senior at Zhejiang University in the College of Information Science and Electronic Engineering (ISEE), graduating in 2026. I grew up in Anhui, China.</p>
+      <p>My undergraduate thesis investigates gesture recognition using Doppler radar sensors — I find the idea of inferring intent from invisible signal reflections genuinely interesting. Alongside thesis work, I am interning at Action&amp;Link, a startup where I work on vision-based non-skeleton human action recognition.</p>
+      <p>In Fall 2026 I will begin graduate school at Georgia Tech.</p>
+
+      <div class="sec-label">Research Interests</div>
+      <p>Reinforcement learning and embodied AI sit at the centre of what I want to work on long-term — agents that act in physical or simulated worlds, learn from interaction, and generalise. I am also interested in backdoor attacks and adversarial robustness, graph neural networks, and time-series forecasting.</p>
+      <p>On the engineering side I am actively drilling PyTorch internals and beginning C++ in preparation for autonomous driving and systems roles.</p>
+
+      <!-- Education -->
+      <div class="sec-label">Education</div>
+      <div class="item-list">
+        <div class="item">
+          <div>
+            <div class="item-title">B.Eng. in Information Engineering</div>
+            <div class="item-authors">Zhejiang University — College of ISEE</div>
+            <div class="item-venue">Thesis: Gesture Recognition Using Doppler Radar Sensors</div>
+          </div>
+          <div class="item-year">2022 – 2026</div>
+        </div>
+      </div>
+
+      <!-- Experience -->
+      <div class="sec-label">Experience</div>
+      <div class="item-list">
+        <div class="item">
+          <div>
+            <div class="item-title">Algorithm Intern — Action Recognition</div>
+            <div class="item-authors">Action&amp;Link (startup)</div>
+            <div class="item-venue">Vision-based non-skeleton human action recognition</div>
+          </div>
+          <div class="item-year">2025 – Present</div>
+        </div>
+      </div>
+
+      <!-- Next step -->
+      <div class="sec-label">Next Step</div>
+      <div class="item-list">
+        <div class="item">
+          <div>
+            <div class="item-title">M.S. Electrical and Computer Engineering</div>
+            <div class="item-authors">Georgia Institute of Technology</div>
+            <div class="item-venue">Atlanta, Georgia — Fall 2026</div>
+          </div>
+          <div class="item-year">2026 –</div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+<script src="assets/main.js"></script>
+</body>
+</html>
