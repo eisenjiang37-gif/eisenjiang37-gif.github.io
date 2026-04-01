@@ -25,4 +25,9 @@ Drop `.md` files into `blogs/` then run:
 ```
 python3 gen_index.py
 ```
-This regenerates `blogs/index.json` and this `README.md`.
+This compiles markdown → HTML, regenerates `blogs/index.json` and this `README.md`.
+
+Serve locally with:
+```
+python3 -m http.server
+```

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Eisen Jiang</title>
+  <link rel="icon" href="cache/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -80,106 +81,8 @@
   </main>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/marked@14/marked.min.js"></script>
 <script src="assets/main.js"></script>
-<script>
-(function () {
-  'use strict';
-  var BASE   = 'blogs/';
-  var listEl = document.getElementById('postList');
-  var bodyEl = document.getElementById('blogContent');
-
-  async function loadManifest() {
-    try {
-      var res = await fetch(BASE + 'index.json');
-      if (!res.ok) throw new Error();
-      return await res.json();
-    } catch (_) {
-      listEl.innerHTML = '<p style="padding:1.5rem 2rem;font-family:\'DM Mono\',monospace;font-size:0.65rem;color:var(--text-dim)">No posts yet.</p>';
-      return [];
-    }
-  }
-
-  async function loadPost(post) {
-    bodyEl.innerHTML = '<div class="blog-loading">Loading\u2026</div>';
-    try {
-      var res  = await fetch(BASE + post.file);
-      if (!res.ok) throw new Error();
-      var md   = await res.text();
-      bodyEl.innerHTML =
-        '<article class="blog-article">' +
-          '<header class="blog-article-header">' +
-            '<div class="pg-label">' + post.date + (post.tag ? ' &nbsp;\u00b7&nbsp; ' + post.tag : '') + '</div>' +
-            '<h1 class="blog-article-title">' + esc(post.title) + '</h1>' +
-          '</header>' +
-          '<div class="blog-article-body">' + marked.parse(md) + '</div>' +
-        '</article>';
-      window.scrollTo(0, 0);
-    } catch (_) {
-      bodyEl.innerHTML = '<div class="blog-loading">Failed to load post.</div>';
-    }
-  }
-
-  function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-
-  function setActive(slug) {
-    document.querySelectorAll('.blog-post-item').forEach(function (el) {
-      el.classList.toggle('active', el.dataset.slug === slug);
-    });
-  }
-
-  async function init() {
-    var posts = await loadManifest();
-    if (!posts.length) return;
-
-    posts.forEach(function (post) {
-      var slug = post.file.replace(/\.md$/, '');
-      var el   = document.createElement('a');
-      el.className    = 'blog-post-item';
-      el.href         = '#' + slug;
-      el.dataset.slug = slug;
-      el.innerHTML    =
-        '<span class="bpi-date">' + esc(post.date) + '</span>' +
-        '<span class="bpi-title">' + esc(post.title) + '</span>' +
-        (post.tag ? '<span class="bpi-tag">' + esc(post.tag) + '</span>' : '');
-      el.addEventListener('click', function (e) {
-        e.preventDefault();
-        history.pushState(null, '', '#' + slug);
-        loadPost(post);
-        setActive(slug);
-      });
-      listEl.appendChild(el);
-    });
-
-    var hash   = location.hash.slice(1);
-    var target = posts.find(function (p) { return p.file.replace(/\.md$/, '') === hash; }) || posts[0];
-    loadPost(target);
-    setActive(target.file.replace(/\.md$/, ''));
-
-    window.addEventListener('popstate', function () {
-      var h = location.hash.slice(1);
-      var p = posts.find(function (p) { return p.file.replace(/\.md$/, '') === h; });
-      if (p) { loadPost(p); setActive(p.file.replace(/\.md$/, '')); }
-    });
-  }
-
-  init();
-
-  /* ── List toggle ────────────────────────────────── */
-  var layout     = document.querySelector('.blog-layout');
-  var toggleBtn  = document.getElementById('listToggle');
-  var expandTab  = document.getElementById('listExpand');
-
-  function setListVisible(visible) {
-    layout.classList.toggle('list-hidden', !visible);
-    localStorage.setItem('blog-list-hidden', visible ? '0' : '1');
-  }
-
-  toggleBtn.addEventListener('click', function () { setListVisible(false); });
-  expandTab.addEventListener('click',  function () { setListVisible(true);  });
-
-  if (localStorage.getItem('blog-list-hidden') === '1') setListVisible(false);
-})();
-</script>
+<script src="blogs/index.js"></script>
+<script src="blogs/blog.js"></script>
 </body>
 </html>
