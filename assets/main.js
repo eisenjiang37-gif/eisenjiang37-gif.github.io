@@ -129,4 +129,15 @@
     if (hashBtn) hashBtn.click();
   }
 
+  /* ── BibTeX toggles ───────────────────────────────── */
+  document.querySelectorAll('.bib-toggle').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id    = btn.dataset.bib;
+      var block = document.getElementById(id);
+      if (!block) return;
+      var open = block.classList.toggle('open');
+      btn.classList.toggle('open', open);
+    });
+  });
+
 })();

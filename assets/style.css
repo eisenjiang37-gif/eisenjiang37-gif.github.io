@@ -541,6 +541,37 @@ p {
 }
 .item-link:hover { border-bottom-color: var(--accent); }
 
+/* BibTeX toggle button (shares .item-link look) */
+button.bib-toggle {
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: border-color var(--t);
+}
+button.bib-toggle:hover    { border-bottom-color: var(--accent); }
+button.bib-toggle.open     { color: var(--accent-warm); border-bottom-color: var(--accent-warm); }
+
+/* BibTeX collapsible block */
+.bib-block {
+  display: none;
+  margin-top: 0.9rem;
+}
+.bib-block.open { display: block; }
+.bib-block pre {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--text-mid);
+  white-space: pre;
+}
+
 /* ─── Research tabs ──────────────────────────────────── */
 .tab-bar {
   display: flex;
@@ -626,7 +657,7 @@ p {
 .c-left  { display: flex; align-items: baseline; gap: 1.5rem; }
 .c-name  {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2.2rem;
+  font-size: 1.4rem;
   font-weight: 400;
   color: var(--text);
   line-height: 1;
@@ -634,8 +665,8 @@ p {
 }
 .c-handle {
   font-family: 'DM Mono', monospace;
-  font-size: 0.6rem;
-  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
   color: var(--text-dim);
 }
 .c-arrow {
@@ -738,7 +769,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   .post-row { grid-template-columns: 5rem 1fr; }
   .post-tag { display: none; }
 
-  .c-name { font-size: 1.6rem; }
+  .c-name { font-size: 1.25rem; }
 }
 
 /* ─── Blog two-panel layout ──────────────────────────── */
@@ -1069,7 +1100,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   .post-tag  { display: none; }
 
   /* Contact */
-  .c-name { font-size: 1.5rem; }
+  .c-name { font-size: 1.2rem; }
   .contact-row { padding: 1.25rem 0; }
 
   /* Touch targets */
