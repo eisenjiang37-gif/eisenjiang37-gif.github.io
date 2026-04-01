@@ -1,4 +1,4 @@
-[
+window.__BLOGS_INDEX__ = [
   {
     "file": "notes-on-tensor-permute.md",
     "slug": "notes-on-tensor-permute",
@@ -13,4 +13,5 @@
     "date": "2026-03-31",
     "html": ""
   }
-]
+];
+;

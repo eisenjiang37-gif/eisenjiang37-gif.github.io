@@ -1,13 +1,25 @@
 (function () {
   'use strict';
 
-  var listEl  = document.getElementById('postList');
-  var bodyEl  = document.getElementById('blogContent');
+  var listEl = document.getElementById('postList');
+  var bodyEl = document.getElementById('blogContent');
+  var scriptUrl = document.currentScript ? document.currentScript.src : 'blogs/blog.js';
+  var manifestUrl = new URL('index.json', scriptUrl).href;
+
+  if (!listEl || !bodyEl) return;
+
+  function getSlug(post) {
+    return post.slug || post.file.replace(/\.md$/, '');
+  }
 
   /* ── Load manifest ───────────────────────────────── */
   async function loadManifest() {
+    if (Array.isArray(window.__BLOGS_INDEX__)) {
+      return window.__BLOGS_INDEX__;
+    }
+
     try {
-      var res = await fetch('./index.json');
+      var res = await fetch(manifestUrl);
       if (!res.ok) throw new Error();
       return await res.json();
     } catch (_) {
@@ -20,17 +32,13 @@
   async function loadPost(post) {
     bodyEl.innerHTML = '<div class="blog-loading">Loading…</div>';
     try {
-      var res = await fetch('./' + post.file);
-      if (!res.ok) throw new Error();
-      var md  = await res.text();
-      var html = marked.parse(md);
       bodyEl.innerHTML =
         '<article class="blog-article">' +
           '<header class="blog-article-header">' +
             '<div class="pg-label">' + post.date + (post.tag ? ' &nbsp;·&nbsp; ' + post.tag : '') + '</div>' +
             '<h1 class="blog-article-title">' + escHtml(post.title) + '</h1>' +
           '</header>' +
-          '<div class="blog-article-body">' + html + '</div>' +
+          '<div class="blog-article-body">' + (post.html || '') + '</div>' +
         '</article>';
       window.scrollTo(0, 0);
     } catch (_) {
@@ -55,7 +63,7 @@
     if (!posts.length) return;
 
     posts.forEach(function (post) {
-      var slug = post.file.replace(/\.md$/, '');
+      var slug = getSlug(post);
       var el   = document.createElement('a');
       el.className    = 'blog-post-item';
       el.href         = '#' + slug;
@@ -76,17 +84,44 @@
 
     /* Restore from URL hash or default to first post */
     var hash   = location.hash.slice(1);
-    var target = posts.find(function (p) { return p.file.replace(/\.md$/, '') === hash; });
+    var target = posts.find(function (p) { return getSlug(p) === hash; });
     if (!target) target = posts[0];
     loadPost(target);
-    setActive(target.file.replace(/\.md$/, ''));
+    setActive(getSlug(target));
 
     /* Browser back / forward */
     window.addEventListener('popstate', function () {
       var h = location.hash.slice(1);
-      var p = posts.find(function (p) { return p.file.replace(/\.md$/, '') === h; });
-      if (p) { loadPost(p); setActive(p.file.replace(/\.md$/, '')); }
+      var p = posts.find(function (p) { return getSlug(p) === h; });
+      if (p) { loadPost(p); setActive(getSlug(p)); }
     });
+  }
+
+  /* ── List toggle ────────────────────────────────── */
+  var layout = document.querySelector('.blog-layout');
+  var toggleBtn = document.getElementById('listToggle');
+  var expandTab = document.getElementById('listExpand');
+
+  function setListVisible(visible) {
+    if (!layout) return;
+    layout.classList.toggle('list-hidden', !visible);
+    localStorage.setItem('blog-list-hidden', visible ? '0' : '1');
+  }
+
+  if (toggleBtn) {
+    toggleBtn.addEventListener('click', function () {
+      setListVisible(false);
+    });
+  }
+
+  if (expandTab) {
+    expandTab.addEventListener('click', function () {
+      setListVisible(true);
+    });
+  }
+
+  if (localStorage.getItem('blog-list-hidden') === '1') {
+    setListVisible(false);
   }
 
   init();
