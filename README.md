@@ -16,6 +16,7 @@ Built with plain HTML/CSS/JS, hosted on GitHub Pages.
 
 | Date | Title | Tag |
 |------|-------|-----|
+| 2026-04-01 | [Quantlearning](writing.html#quantlearning) |  |
 | 2026-03-31 | [Notes on tensor.permute and view: What I Got Wrong for Too Long](writing.html#notes-on-tensor-permute) |  |
 | 2026-03-31 | [Test](writing.html#test) |  |
 

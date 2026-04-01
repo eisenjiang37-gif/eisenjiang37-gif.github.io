@@ -1,5 +1,12 @@
 [
   {
+    "file": "QuantLearning.md",
+    "slug": "quantlearning",
+    "title": "Quantlearning",
+    "date": "2026-04-01",
+    "html": "<p>Here I will share my quantum learning and attempts at investing.</p>"
+  },
+  {
     "file": "notes-on-tensor-permute.md",
     "slug": "notes-on-tensor-permute",
     "title": "Notes on tensor.permute and view: What I Got Wrong for Too Long",
