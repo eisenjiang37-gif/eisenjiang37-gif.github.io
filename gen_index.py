@@ -202,6 +202,36 @@ for fname in sorted(os.listdir(BLOGS_DIR)):
     }
     if tag:
         entry['tag'] = tag
+
+    # ── Sub-items: blogs/<stem>/*.md ──────────────────────
+    sub_dir = os.path.join(BLOGS_DIR, stem)
+    if os.path.isdir(sub_dir):
+        children = []
+        for child_fname in sorted(os.listdir(sub_dir)):
+            if not child_fname.endswith('.md'):
+                continue
+            child_path  = os.path.join(sub_dir, child_fname)
+            child_mtime = os.path.getmtime(child_path)
+            child_date  = datetime.fromtimestamp(child_mtime).strftime('%Y-%m-%d')
+            child_title, child_tag = parse_meta(child_path)
+            child_stem  = os.path.splitext(child_fname)[0]
+            if not child_title:
+                child_title = stem_to_title(child_stem)
+            with open(child_path, encoding='utf-8') as f:
+                child_raw = f.read()
+            child_entry = {
+                'file':  f'{stem}/{child_fname}',
+                'slug':  f'{stem_to_slug(stem)}/{stem_to_slug(child_stem)}',
+                'title': child_title,
+                'date':  child_date,
+                'html':  md_to_html(child_raw),
+            }
+            if child_tag:
+                child_entry['tag'] = child_tag
+            children.append(child_entry)
+        if children:
+            entry['children'] = children
+
     entries.append(entry)
 
 entries.sort(key=lambda e: e['date'], reverse=True)
@@ -213,7 +243,6 @@ with open(OUT_FILE, 'w', encoding='utf-8') as f:
 with open(OUT_JS, 'w', encoding='utf-8') as f:
     f.write('window.__BLOGS_INDEX__ = ')
     json.dump(entries, f, indent=2, ensure_ascii=False)
-    f.write(';\n')
     f.write(';\n')
 
 # ── README ────────────────────────────────────────────────────────────────────

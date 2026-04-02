@@ -21,4 +21,3 @@ window.__BLOGS_INDEX__ = [
     "html": ""
   }
 ];
-;

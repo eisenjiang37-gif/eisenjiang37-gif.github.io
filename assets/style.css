@@ -841,6 +841,68 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   border-left: 2px solid var(--accent);
   padding-left: calc(2rem - 2px);
 }
+
+/* ─── Blog list hierarchy ────────────────────────── */
+/* Parent row with chevron: flex layout */
+.bpi-has-children > .blog-post-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+/* CSS chevron (right-pointing, rotates down when expanded) */
+.bpi-chevron {
+  flex-shrink: 0;
+  width: 5px;
+  height: 5px;
+  margin-top: 0.55rem;
+  border-right: 1.5px solid var(--text-dim);
+  border-bottom: 1.5px solid var(--text-dim);
+  transform: rotate(-45deg);
+  transition: transform 0.22s var(--ease), border-color 0.22s;
+}
+.bpi-expanded > .blog-post-item .bpi-chevron {
+  transform: rotate(45deg);
+  border-color: var(--accent);
+}
+/* meta column inside parent rows */
+.bpi-meta { flex: 1; min-width: 0; }
+.bpi-meta .bpi-date   { display: block; }
+.bpi-meta .bpi-title  { display: block; }
+.bpi-meta .bpi-tag    { display: inline-block; }
+
+/* Parent active indicator when a child is selected */
+.bpi-parent-active > .blog-post-item { background: var(--bg-2); }
+.bpi-parent-active > .blog-post-item .bpi-chevron { border-color: var(--accent); }
+
+/* Children collapsible container */
+.bpi-children {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.32s var(--ease);
+  border-left: 1px solid var(--border);
+  margin-left: 2.35rem;
+}
+.bpi-expanded .bpi-children { max-height: 1200px; }
+
+/* Child items */
+.bpi-child {
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 1.25rem;
+}
+.bpi-child .bpi-date  { font-size: 0.52rem; }
+.bpi-child .bpi-title { font-size: 0.78rem; }
+.bpi-child.active {
+  border-left: 2px solid var(--accent);
+  padding-left: calc(1.25rem - 2px);
+}
+
+/* Empty state */
+.bpi-empty {
+  padding: 1.5rem 2rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--text-dim);
+}
 .bpi-date {
   display: block;
   font-family: 'IBM Plex Mono', monospace;
