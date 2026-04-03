@@ -34,6 +34,101 @@
     bar.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
   }, { passive: true });
 
+  /* ── Click shatter effect ─────────────────────────── */
+  function createShard(x, y) {
+    var shard = document.createElement('div');
+    shard.className = 'shard';
+
+    var hueA = Math.floor(Math.random() * 360);
+    var hueB = (hueA + 70 + Math.random() * 80) % 360;
+    var hueC = (hueB + 70 + Math.random() * 80) % 360;
+    var hueD = (hueC + 70 + Math.random() * 80) % 360;
+    shard.style.setProperty('--shard-c1', 'hsla(' + hueA + ', 100%, 62%, 1)');
+    shard.style.setProperty('--shard-c2', 'hsla(' + hueB + ', 100%, 78%, 1)');
+    shard.style.setProperty('--shard-c3', 'hsla(' + hueC + ', 100%, 66%, 1)');
+    shard.style.setProperty('--shard-c4', 'hsla(' + hueD + ', 100%, 70%, 1)');
+
+    var points = [];
+    for (var i = 0; i < 3; i += 1) {
+      points.push((Math.random() * 100) + '% ' + (Math.random() * 100) + '%');
+    }
+    shard.style.clipPath = 'polygon(' + points.join(',') + ')';
+
+    var size = (Math.random() * 40) + 16;
+    shard.style.width = size + 'px';
+    shard.style.height = size + 'px';
+    shard.style.left = x + 'px';
+    shard.style.top = y + 'px';
+
+    var angle = Math.random() * Math.PI * 2;
+    var distance = (Math.random() * 55) + 18;
+    var destX = Math.cos(angle) * distance;
+    var destY = Math.sin(angle) * distance;
+    var rotation = (Math.random() * 720) - 360;
+    shard.style.setProperty('--vector-angle', (angle * 180 / Math.PI) + 'deg');
+    shard.style.setProperty('--vector-length', Math.max(8, Math.min(22, distance * 0.48)) + 'px');
+
+    document.body.appendChild(shard);
+
+    var animation = shard.animate([
+      {
+        transform: 'translate(-50%, -50%) scale(0) rotate(0deg)',
+        opacity: 1,
+        filter: 'brightness(3) blur(0px)',
+        offset: 0
+      },
+      {
+        transform: 'translate(calc(-50% + ' + (destX * 0.16) + 'px), calc(-50% + ' + (destY * 0.16) + 'px)) scale(0.42) rotate(' + (rotation * 0.16) + 'deg)',
+        opacity: 0.88,
+        filter: 'brightness(2.6) blur(0.2px)',
+        offset: 0.12
+      },
+      {
+        transform: 'translate(calc(-50% + ' + (destX * 0.45) + 'px), calc(-50% + ' + (destY * 0.45) + 'px)) scale(0.9) rotate(' + (rotation * 0.45) + 'deg)',
+        opacity: 0.58,
+        filter: 'brightness(2.1) blur(0.8px)',
+        offset: 0.45
+      },
+      {
+        transform: 'translate(calc(-50% + ' + destX + 'px), calc(-50% + ' + destY + 'px)) scale(1.5) rotate(' + rotation + 'deg)',
+        opacity: 0,
+        filter: 'brightness(1) blur(2px)',
+        offset: 1
+      }
+    ], {
+      duration: 260 + (Math.random() * 220),
+      easing: 'cubic-bezier(0.1, 0.9, 0.2, 1)',
+      fill: 'forwards'
+    });
+
+    animation.onfinish = function () {
+      shard.remove();
+    };
+  }
+
+  function triggerShatter(event) {
+    if (!event.isPrimary || event.pointerType === 'touch') return;
+
+    var x = event.clientX;
+    var y = event.clientY;
+
+    var flash = document.createElement('div');
+    flash.className = 'impact-flash';
+    flash.style.left = (x - 4) + 'px';
+    flash.style.top = (y - 4) + 'px';
+    document.body.appendChild(flash);
+    window.setTimeout(function () {
+      flash.remove();
+    }, 280);
+
+    for (var i = 0; i < 6; i += 1) {
+      createShard(x, y);
+    }
+
+  }
+
+  window.addEventListener('pointerdown', triggerShatter, { passive: true });
+
   /* ── Active nav state ─────────────────────────────── */
   /* Skip JS detection on /blogs — active classes are hardcoded there */
   var inBlogs  = location.pathname.indexOf('/blogs') !== -1;
