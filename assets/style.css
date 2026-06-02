@@ -723,6 +723,10 @@ p {
   transition: border-color var(--t);
 }
 .item-link:hover { border-bottom-color: var(--accent); }
+.item-link-muted {
+  color: var(--text-dim);
+  border-bottom: none;
+}
 
 /* BibTeX toggle button (shares .item-link look) */
 button.bib-toggle {
