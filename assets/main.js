@@ -3,7 +3,7 @@
 
   /* ── Theme ────────────────────────────────────────── */
   var THEMES = { dark: 'light', light: 'dark' };
-  var LABELS = { dark: '◑ Light mode', light: '◐ Dark mode' };
+  var LABELS = { dark: 'Light mode', light: 'Dark mode' };
 
   function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
@@ -14,7 +14,7 @@
   }
 
   /* Init theme (also applied via inline <head> script to prevent flash) */
-  var currentTheme = localStorage.getItem('theme') || 'dark';
+  var currentTheme = localStorage.getItem('theme') || 'light';
   applyTheme(currentTheme);
 
   document.querySelectorAll('.theme-toggle').forEach(function (btn) {
@@ -165,29 +165,6 @@
       a.classList.add('active');
     }
   });
-
-  /* ── Sidebar collapse (desktop) ──────────────────── */
-  var sidebarLayout       = document.querySelector('.layout');
-  var sidebarCollapseBtn  = document.getElementById('sidebarCollapse');
-
-  if (sidebarCollapseBtn && sidebarLayout) {
-    var sidebarExpandTab = document.createElement('button');
-    sidebarExpandTab.className   = 'sidebar-expand-tab';
-    sidebarExpandTab.textContent = 'Menu ›';
-    sidebarExpandTab.style.display = 'none';
-    document.body.appendChild(sidebarExpandTab);
-
-    function setSidebarCollapsed(collapsed) {
-      sidebarLayout.classList.toggle('sidebar-collapsed', collapsed);
-      sidebarExpandTab.style.display = collapsed ? 'block' : 'none';
-      localStorage.setItem('sidebar-collapsed', collapsed ? '1' : '0');
-    }
-
-    sidebarCollapseBtn.addEventListener('click', function () { setSidebarCollapsed(true); });
-    sidebarExpandTab.addEventListener('click',   function () { setSidebarCollapsed(false); });
-
-    if (localStorage.getItem('sidebar-collapsed') === '1') setSidebarCollapsed(true);
-  }
 
   /* ── Mobile menu ──────────────────────────────────── */
   var toggle = document.getElementById('mobToggle');
