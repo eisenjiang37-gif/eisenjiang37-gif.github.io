@@ -239,7 +239,7 @@ html[data-theme="light"] .shard::before {
   height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 4.3rem 2.8rem 2.4rem;
+  padding: 4.3rem 2.8rem 2.4rem 3.35rem;
   border-right: 1px solid var(--border);
   background: var(--panel);
   z-index: 100;
@@ -408,6 +408,7 @@ html[data-theme="light"] .shard::before {
   margin-left: var(--sidebar-w);
   flex: 1;
   min-height: 100vh;
+  padding-left: clamp(3.5rem, 5vw, 6rem);
   background: #ffffff;
   animation: pageIn 0.55s var(--ease) both;
 }
@@ -429,7 +430,7 @@ html[data-theme="light"] .shard::before {
 
 .reader-article {
   max-width: 72rem;
-  padding: 4.8rem 4.4rem 5rem;
+  padding: 4.8rem 4.4rem 5rem 0;
   color: #3f4247;
 }
 
@@ -1056,7 +1057,10 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
 
   .sidebar-body.open { display: flex; }
 
-  .content { margin-left: 0; }
+  .content {
+    margin-left: 0;
+    padding-left: 0;
+  }
 
   .hero,
   .pg-header,
@@ -1450,6 +1454,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
 
   .content {
     margin-left: 0;
+    padding-left: 0;
   }
 
   .reader-article {
