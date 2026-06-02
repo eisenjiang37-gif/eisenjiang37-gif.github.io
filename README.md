@@ -16,17 +16,20 @@ Built with plain HTML/CSS/JS, hosted on GitHub Pages.
 
 | Date | Title | Tag |
 |------|-------|-----|
+| 2026-04-30 | [Vector C++](writing.html#vector-c) |  |
+| 2026-04-15 | [CUDA Programming](writing.html#cuda) |  |
 | 2026-04-01 | [Quantlearning](writing.html#quantlearning) |  |
-| 2026-03-31 | [Notes on tensor.permute and view: What I Got Wrong for Too Long](writing.html#notes-on-tensor-permute) |  |
 | 2026-03-31 | [Test](writing.html#test) |  |
 
 ## Dev
 
-Drop `.md` files into `blogs/` then run:
+Drop `.md` files into `blogs/` and push. GitHub Actions runs:
 ```
 python3 gen_index.py
 ```
-This compiles markdown → HTML, regenerates `blogs/index.json` and this `README.md`.
+This compiles markdown → HTML, regenerates `blogs/index.json`, `blogs/index.js`, and this `README.md`.
+
+For local preview before pushing, run the same command manually.
 
 Serve locally with:
 ```

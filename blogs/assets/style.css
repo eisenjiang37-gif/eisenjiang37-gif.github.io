@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* ─── Variables ──────────────────────────────────────── */
 :root {
@@ -13,7 +13,7 @@
   --sidebar-w:   228px;
   --font-title:  'Inter', system-ui, sans-serif;
   --font-body:   'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --font-code:   'Fira Code', 'SFMono-Regular', Consolas, monospace;
+  --font-code:   'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
   --ease:        cubic-bezier(0.16, 1, 0.3, 1);
   --t:           0.32s;
 }
@@ -256,7 +256,7 @@ html[data-theme="light"] .shard::before {
   text-decoration: none;
 }
 .site-name {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.02em;
@@ -265,7 +265,7 @@ html[data-theme="light"] .shard::before {
   line-height: 1.15;
 }
 .site-sub {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -291,7 +291,7 @@ html[data-theme="light"] .shard::before {
   align-items: center;
   gap: 0.8rem;
   padding: 0.38rem 0;
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.67rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -326,7 +326,7 @@ html[data-theme="light"] .shard::before {
 .sub-nav li a {
   display: block;
   padding: 0.26rem 0;
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -350,7 +350,7 @@ html[data-theme="light"] .shard::before {
   margin-bottom: 0.85rem;
 }
 .socials a {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -361,7 +361,7 @@ html[data-theme="light"] .shard::before {
 .socials a:hover { color: var(--accent); }
 
 .copy {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.57rem;
   letter-spacing: 0.06em;
   color: var(--text-dim);
@@ -393,7 +393,7 @@ html[data-theme="light"] .shard::before {
   position: absolute;
   bottom: -2rem;
   right: 3rem;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 14rem;
   font-weight: 500;
   letter-spacing: -0.06em;
@@ -405,7 +405,7 @@ html[data-theme="light"] .shard::before {
 }
 
 .hero-eyebrow {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.63rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -414,7 +414,7 @@ html[data-theme="light"] .shard::before {
 }
 
 .hero-name {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-weight: 500;
   font-size: clamp(3rem, 7.5vw, 7.5rem);
   line-height: 0.96;
@@ -440,7 +440,7 @@ html[data-theme="light"] .shard::before {
   flex-wrap: wrap;
 }
 .hero-tagline {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   font-size: 1.1rem;
   font-style: italic;
   color: var(--text-mid);
@@ -449,7 +449,7 @@ html[data-theme="light"] .shard::before {
   margin-bottom: 0;
 }
 .badge {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -478,14 +478,14 @@ html[data-theme="light"] .shard::before {
 .index-card:hover { background: var(--bg-2); }
 
 .card-no {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.14em;
   color: var(--text-dim);
   margin-bottom: 1.25rem;
 }
 .card-h {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 2.5rem;
   font-weight: 500;
   line-height: 1.05;
@@ -496,7 +496,7 @@ html[data-theme="light"] .shard::before {
 .index-card:hover .card-h { color: var(--accent); }
 
 .card-p {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   font-size: 0.95rem;
   color: var(--text-dim);
   line-height: 1.55;
@@ -507,7 +507,7 @@ html[data-theme="light"] .shard::before {
   position: absolute;
   bottom: 2rem;
   right: 2.5rem;
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.1em;
   color: var(--text-dim);
@@ -523,7 +523,7 @@ html[data-theme="light"] .shard::before {
   border-bottom: 1px solid var(--border);
 }
 .pg-label {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -531,7 +531,7 @@ html[data-theme="light"] .shard::before {
   margin-bottom: 1rem;
 }
 .pg-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: clamp(2.5rem, 5vw, 5rem);
   font-weight: 500;
   line-height: 1.05;
@@ -539,7 +539,7 @@ html[data-theme="light"] .shard::before {
   color: var(--text);
 }
 .pg-sub {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   font-size: 1.05rem;
   font-style: italic;
   color: var(--text-mid);
@@ -552,7 +552,7 @@ html[data-theme="light"] .shard::before {
 .pg-body { padding: 3rem 4rem; }
 
 .sec-label {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -572,7 +572,7 @@ html[data-theme="light"] .shard::before {
 }
 
 h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 2rem;
   font-weight: 500;
   color: var(--text);
@@ -580,7 +580,7 @@ h2 {
   margin-bottom: 1rem;
 }
 h3 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.35rem;
   font-weight: 500;
   color: var(--text);
@@ -596,7 +596,7 @@ p {
   border: 1px dashed var(--border);
   padding: 1.1rem 1.5rem;
   margin-bottom: 1.1rem;
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.63rem;
   letter-spacing: 0.05em;
   color: var(--text-dim);
@@ -623,7 +623,7 @@ p {
   gap: 1rem;
 }
 .kv-key {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -631,7 +631,7 @@ p {
   flex-shrink: 0;
 }
 .kv-val {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--text-mid);
   text-align: right;
@@ -649,7 +649,7 @@ p {
   border-bottom: 1px solid var(--border);
 }
 .item-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.2rem;
   font-weight: 500;
   color: var(--text);
@@ -657,20 +657,20 @@ p {
   line-height: 1.3;
 }
 .item-authors {
-  font-family: 'Lora', serif;
+  font-family: var(--font-body);
   font-size: 0.875rem;
   font-style: italic;
   color: var(--text-dim);
   margin-bottom: 0.2rem;
 }
 .item-venue {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.05em;
   color: var(--text-dim);
 }
 .item-year {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.06em;
   color: var(--text-dim);
@@ -683,7 +683,7 @@ p {
   margin-top: 0.6rem;
 }
 .item-link {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -701,7 +701,7 @@ p {
   margin-bottom: 2rem;
 }
 .tab-btn {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.63rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -736,20 +736,20 @@ p {
 .post-row:hover .post-title { color: var(--accent); }
 
 .post-date {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.06em;
   color: var(--text-dim);
 }
 .post-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.15rem;
   color: var(--text);
   line-height: 1.3;
   transition: color var(--t);
 }
 .post-tag {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.57rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -778,7 +778,7 @@ p {
 
 .c-left  { display: flex; align-items: baseline; gap: 1rem; }
 .c-name  {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 2.2rem;
   font-weight: 500;
   color: var(--text);
@@ -786,13 +786,13 @@ p {
   transition: color var(--t);
 }
 .c-handle {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   color: var(--text-dim);
 }
 .c-arrow {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.63rem;
   color: var(--text-dim);
   transition: all var(--t) var(--ease);
@@ -807,7 +807,7 @@ p {
   background: none;
   border: 1px solid var(--border);
   color: var(--text-dim);
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -860,7 +860,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
     background: none;
     border: 1px solid var(--border);
     color: var(--text-dim);
-    font-family: 'DM Mono', monospace;
+    font-family: var(--font-code);
     font-size: 0.58rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -918,7 +918,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   flex-shrink: 0;
 }
 .blog-list-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text);
@@ -945,7 +945,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
 }
 .bpi-date {
   display: block;
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.57rem;
   letter-spacing: 0.06em;
   color: var(--text-dim);
@@ -953,7 +953,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
 }
 .bpi-title {
   display: block;
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 0.95rem;
   color: var(--text);
   line-height: 1.4;
@@ -964,7 +964,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
 .blog-post-item.active .bpi-title { color: var(--accent); }
 .bpi-tag {
   display: inline-block;
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.55rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -981,7 +981,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   padding: 3rem 4rem;
 }
 .blog-welcome, .blog-loading {
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.63rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1002,7 +1002,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   border-bottom: 1px solid var(--border);
 }
 .blog-article-title {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: clamp(1.8rem, 3vw, 2.8rem);
   font-weight: 500;
   line-height: 1.15;
@@ -1014,13 +1014,13 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
 /* Markdown body typography */
 .blog-article-body { max-width: 68ch; }
 .blog-article-body h1 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.75rem; font-weight: 600;
   color: var(--text); line-height: 1.2;
   margin: 2rem 0 0.85rem;
 }
 .blog-article-body h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.35rem; font-weight: 600;
   color: var(--text); line-height: 1.2;
   margin: 1.6rem 0 0.65rem;
@@ -1028,26 +1028,26 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   border-bottom: 1px solid var(--border);
 }
 .blog-article-body h3 {
-  font-family: 'Playfair Display', Georgia, serif;
+  font-family: var(--font-title);
   font-size: 1.1rem; font-weight: 600;
   color: var(--text); margin: 1.4rem 0 0.45rem;
 }
 .blog-article-body p {
-  font-family: 'Lora', Georgia, serif;
+  font-family: var(--font-body);
   font-size: 1.05rem; line-height: 1.78;
   color: var(--text-mid); margin-bottom: 1.1rem; max-width: none;
 }
 .blog-article-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color var(--t); }
 .blog-article-body a:hover { border-bottom-color: var(--accent); }
 .blog-article-body ul, .blog-article-body ol { padding-left: 1.35rem; margin-bottom: 1.1rem; color: var(--text-mid); }
-.blog-article-body li { font-family: 'Lora', Georgia, serif; font-size: 1.05rem; line-height: 1.75; margin-bottom: 0.4rem; }
-.blog-article-body code { font-family: 'DM Mono', monospace; font-size: 0.82em; background: var(--bg-2); color: var(--accent); padding: 0.15em 0.4em; border-radius: 2px; }
+.blog-article-body li { font-family: var(--font-body); font-size: 1.05rem; line-height: 1.75; margin-bottom: 0.4rem; }
+.blog-article-body code { font-family: var(--font-code); font-size: 0.82em; background: var(--bg-2); color: var(--accent); padding: 0.15em 0.4em; border-radius: 2px; }
 .blog-article-body pre { background: var(--bg-2); border: 1px solid var(--border); padding: 1.1rem; overflow-x: auto; margin: 1.1rem 0; }
 .blog-article-body pre code { background: none; padding: 0; color: var(--text-mid); font-size: 0.85rem; }
 .blog-article-body blockquote { border-left: 3px solid var(--accent); padding-left: 1.1rem; margin: 1.1rem 0; font-style: italic; }
 .blog-article-body blockquote p { color: var(--text-dim); }
 .blog-article-body hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
-.blog-article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: 'DM Mono', monospace; font-size: 0.82rem; }
+.blog-article-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-family: var(--font-code); font-size: 0.82rem; }
 .blog-article-body th { text-align: left; padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--text); font-weight: 500; }
 .blog-article-body td { padding: 0.6rem 1rem; border-bottom: 1px solid var(--border); color: var(--text-mid); }
 
@@ -1083,7 +1083,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   background: none;
   border: 1px solid var(--border);
   color: var(--text-dim);
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.6rem;
   letter-spacing: 0.08em;
   padding: 0.25rem 0.55rem;
@@ -1106,7 +1106,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   border: 1px solid var(--border);
   border-left: none;
   color: var(--text-dim);
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -1170,7 +1170,7 @@ html[data-theme="light"] .theme-toggle .t-icon::after {
   border: 1px solid var(--border);
   border-left: none;
   color: var(--text-dim);
-  font-family: 'DM Mono', monospace;
+  font-family: var(--font-code);
   font-size: 0.58rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
