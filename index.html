@@ -18,62 +18,48 @@
   <!-- ═══ Sidebar ═══ -->
   <nav class="sidebar" aria-label="Primary navigation">
     <div class="profile-card">
-      <a href="index.html" class="avatar-link" aria-label="Eisen Jiang home">
-        <span class="avatar-fallback">EJ</span>
-      </a>
+      <a href="index.html" class="avatar-link" aria-label="Eisen home"></a>
       <a href="index.html" class="site-mark">
-        <span class="site-name">Eisen Jiang</span>
-        <span class="site-sub">Zihan Jiang / 蒋子涵</span>
+        <span class="site-name">Eisen</span>
+        <span class="site-sub">Eisen's knowledge dump</span>
       </a>
-      <div class="profile-meta">
-        <span>Zhejiang University -> Georgia Tech</span>
-        <span>Research, systems, agents</span>
-      </div>
     </div>
+
+    <button class="mob-toggle" id="mobToggle" type="button">Menu</button>
 
     <div class="sidebar-body" id="sidebarBody">
       <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="research.html#projects">Projects</a></li>
-        <li><a href="writing.html">Writing</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html"><span class="nav-icon nav-home"></span><span>Home</span></a></li>
+        <li><a href="writing.html"><span class="nav-icon nav-list"></span><span>Categories</span></a></li>
+        <li><a href="writing.html"><span class="nav-icon nav-tag"></span><span>Tags</span></a></li>
+        <li><a href="about.html"><span class="nav-icon nav-grad"></span><span>GeorgiaTech</span></a></li>
+        <li><a href="contact.html"><span class="nav-icon nav-coffee"></span><span>Coffee</span></a></li>
+        <li><a href="about.html"><span class="nav-icon nav-about"></span><span>About</span></a></li>
+        <li><a href="writing.html"><span class="nav-icon nav-archive"></span><span>Archives</span></a></li>
       </ul>
 
       <div class="sidebar-foot">
         <div class="socials">
-          <a href="https://github.com/eisenjiang37-gif" target="_blank" rel="noopener">GitHub</a>
-          <a href="contact.html">Scholar</a>
-          <a href="mailto:eisenjiang37@gmail.com">Email</a>
-          <a href="assets/zihan-CV_2026.1.pdf" target="_blank" rel="noopener">CV</a>
+          <a href="https://github.com/eisenjiang37-gif" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="contact.html" aria-label="Scholar">GS</a>
+          <a href="mailto:eisenjiang37@gmail.com" aria-label="Email">@</a>
+          <a href="assets/zihan-CV_2026.1.pdf" target="_blank" rel="noopener" aria-label="CV">CV</a>
         </div>
-        <button class="theme-toggle" type="button">
-          <span class="t-icon"></span>
-          <span class="t-label">Dark mode</span>
-        </button>
-        <div class="copy">© 2026 Eisen Jiang</div>
       </div>
     </div>
-
-    <button class="mob-toggle" id="mobToggle" type="button">Menu</button>
   </nav>
 
   <!-- ═══ Main ═══ -->
   <main class="content">
 
-    <section class="hero">
-      <div class="hero-eyebrow">Personal research notebook</div>
-      <h1 class="hero-name">
-        <span class="hero-line">Research,</span>
-        <span class="hero-line">systems,</span>
-        <span class="hero-line">and agents.</span>
-      </h1>
-      <div class="hero-footer">
-        <p class="hero-tagline">I am a senior at Zhejiang University working on gesture recognition, action understanding, reinforcement learning, and embodied AI. I will begin graduate study at Georgia Tech in Fall 2026.</p>
-        <span class="badge">Incoming Grad — Fall 2026</span>
+    <article class="reader-article">
+      <h1>Welcome to my knowledge dump</h1>
+      <p>I write about research, systems, reinforcement learning, signal processing, and the engineering notes I want to keep around.</p>
+      <p>This site is being shaped as a reading-first personal notebook: quiet sidebar, spacious text, and a layout that stays useful for long posts.</p>
+      <div class="note-box">
+        <strong>Current focus:</strong> gesture recognition, embodied AI, action understanding, and preparing for graduate study at Georgia Tech.
       </div>
-    </section>
+    </article>
   </main>
 </div>
 <script src="assets/main.js"></script>

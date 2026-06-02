@@ -178,7 +178,7 @@
 
   if (toggleBtn) toggleBtn.addEventListener('click', function () { setListVisible(false); });
   if (expandTab) expandTab.addEventListener('click', function () { setListVisible(true); });
-  if (localStorage.getItem('blog-list-hidden') === '1') setListVisible(false);
+  if (localStorage.getItem('blog-list-hidden') !== '0') setListVisible(false);
 
   init();
 })();
